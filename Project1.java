@@ -30,14 +30,18 @@ public class Project1 {
 
     private static void algorithmA(int n) {
         System.out.println("Testing Algorithm A");
+        System.out.println();
         // Random to be used in BigInt generation
         Random rand = new Random();
         // Testing 512 bit private key
         testAlgorithmA(new BigInteger(512, rand), new BigInteger(512, rand), new BigInteger(512, rand), BigInteger.ZERO, n, 512);
+        System.out.println();
         //Testing 256 bit private key
         testAlgorithmA(new BigInteger(256, rand), new BigInteger(256, rand), new BigInteger(256, rand), BigInteger.ZERO, n, 256);
+        System.out.println();
         //Testing 1024 bit private key
         testAlgorithmA(new BigInteger(1024, rand), new BigInteger(1024, rand), new BigInteger(1024, rand), BigInteger.ZERO, n, 1024);
+        System.out.println();
         //Testing all 1s 512 bit private key
         byte[] allOnes = new byte[512];
         allOnes[0] = (byte)0;
@@ -46,6 +50,7 @@ public class Project1 {
         } 
         System.out.println("Using ModExp on a BigInteger containing all 1s");
         testAlgorithmA(new BigInteger(512, rand), new BigInteger(512, rand), new BigInteger(allOnes), BigInteger.ZERO, n, 512);
+        System.out.println();
         //Testing all 0s 512 private key
         byte[] allZeroes = new byte[512];
         for(int i = 0; i < allZeroes.length; i++) {
@@ -53,6 +58,7 @@ public class Project1 {
         }
         System.out.println("Using ModExp on a BigInteger containing all 0s");
         testAlgorithmA(new BigInteger(512, rand), new BigInteger(512, rand), new BigInteger(allZeroes), BigInteger.ZERO, n, 512);
+        System.out.println();
     }
 
     private static void testAlgorithmA(BigInteger c, BigInteger m, BigInteger priv, BigInteger blockRes, int numIterations, int numBits) {
