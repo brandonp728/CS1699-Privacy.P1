@@ -16,12 +16,12 @@ public class Project1 {
             if(ans.equalsIgnoreCase("A")) {
                 algorithmA(n);
             }
-						else if(ans.equalsIgnoreCase("B")) {
-							algorithmB(n);
+			else if(ans.equalsIgnoreCase("B")) {
+				algorithmB(n);
             }
-						else {
-							System.out.println("Invalid response");
-						}
+			else {
+				System.out.println("Invalid response");
+			}
             System.out.println("Press enter to restart or type -1 to quit");
             ans = s.nextLine();
             if(ans.equals("-1")) {
